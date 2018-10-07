@@ -14,7 +14,6 @@ class List extends Component {
         })
     }
     onValueChange = (id) => (e) => {
-        console.log(e.target.value)
         const value = e.target.value;
         const upd = updateQuestions(this.state, id, value)
     }
