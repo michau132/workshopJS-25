@@ -10,10 +10,10 @@ import AnswerNumber from './AnswerNumber';
 // const Question = components[type]
 // }
 
-const Answer = ({type, dataFromItem, onValueChange}) => {
+const Answer = ({type, dataFromItem}) => {
     if (type === 'text') {
         return (
-            <AnswerText data={dataFromItem} onValueChange={onValueChange}/>
+            <AnswerText data={dataFromItem}/>
         )
     } else if (type === 'multi') {
         return (

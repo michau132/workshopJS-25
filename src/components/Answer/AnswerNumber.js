@@ -5,7 +5,7 @@ class AnswerNumber extends Component {
         currentValue: ''
     }
     getValueFromInput = (e) => {
-        console.log(e.target.value)
+  
         this.setState({currentValue: e.target.value})
     }
     render() {
