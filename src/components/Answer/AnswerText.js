@@ -1,20 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import {updateQuestionValue } from '../../../actions/actionCreators'
 
-const AnswerText = ({data, onValueChange}) => {
+
+const AnswerText = ({data, onTextValueChange}) => {
     return (
-        <input type={data.type} onChange={onValueChange(data.id)} />
+        <input type={data.type} onChange={onTextValueChange(data.id)} />
     );
 }
 
 
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onValueChange: (id) => e =>  {
-            dispatch(updateQuestionValue(id, e.target.value))
-        }
-    }
-}
-export default connect(null, mapDispatchToProps)(AnswerText);
+export default AnswerText;

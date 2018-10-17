@@ -1,15 +1,16 @@
 import React from 'react';
 
-const AnswerMulti = (props) => {
-   return (
+const AnswerMulti = ({data, currentValue = [], onMultiClick}) => {
+    return (
        <React.Fragment>
             {
-                props.data.options.map((item, i) => (
-                    <label key={i} style={{'display': "block"}}>
+                data.options.map((item, i) => { 
+                    return(
+                    <label key={i} style={{'display': "block"}} >
                         {item}
-                        <input type="checkbox" name={item}/>
+                        <input type="checkbox" name={item} onChange={onMultiClick(data)}/>
                     </label>
-                ))
+                )})
             }
        </React.Fragment>
    )

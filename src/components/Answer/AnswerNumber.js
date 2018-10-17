@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Stars from 'react-star-rating-component';
 
-class AnswerNumber extends Component {
-    state = {
-        currentValue: ''
-    }
-    getValueFromInput = (e) => {
-  
-        this.setState({currentValue: e.target.value})
-    }
-    render() {
-        return (
-            <input onChange={this.getValueFromInput} type={this.props.data.type} value={this.state.currentValue} />
-        );
-    }
-}
+const AnswerNumber = (props) => {
+    const {data} = props;
+    return (
+        <Stars
+            name={data.question}
+            starCount={data.max}
+            value={data.currentValue}
+            onStarClick={evt => props.onStarClick(data.id, evt)}
+        />
+    );
+};
 
 export default AnswerNumber;

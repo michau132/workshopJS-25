@@ -4,6 +4,7 @@ const getQuestionById = id => question => question.id === id;
 
 
 export default function updateQuestions(questions, action) {
+    
     const {id, newValue} = action;
     const foundIndex = questions.findIndex(getQuestionById(id))
     const oldQuestion = questions[foundIndex]

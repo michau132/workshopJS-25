@@ -10,22 +10,22 @@ import AnswerNumber from './AnswerNumber';
 // const Question = components[type]
 // }
 
-const Answer = ({type, dataFromItem}) => {
+const Answer = ({type, dataFromItem, onTextValueChange, onStarClick, onMultiClick}) => {
     if (type === 'text') {
         return (
-            <AnswerText data={dataFromItem}/>
+            <AnswerText data={dataFromItem} onTextValueChange={onTextValueChange}/>
         )
     } else if (type === 'multi') {
         return (
-            <AnswerMulti data={dataFromItem}/>
+            <AnswerMulti data={dataFromItem} onMultiClick={onMultiClick}/>
         )
     } else if (type === 'select') {
         return (
-             <AnswerSelect data={dataFromItem}/>
+             <AnswerSelect data={dataFromItem} onTextValueChange={onTextValueChange}/>
         )
     } else if (type === 'number') {
         return (
-            <AnswerNumber data={dataFromItem}/>
+            <AnswerNumber onStarClick={onStarClick} data={dataFromItem}/>
         )
     }
      else {

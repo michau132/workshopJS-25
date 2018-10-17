@@ -1,9 +1,9 @@
 import React from 'react';
-import Answer from './questions/Answer';
+import Answer from './Answer/';
 
 
 
-const List = ({questions, onTextValueChange}) => {
+const List = ({questions, onTextValueChange, onStarClick, onMultiClick}) => {
         return (
             <ul>
                 {
@@ -14,6 +14,8 @@ const List = ({questions, onTextValueChange}) => {
                                     type={listItem.type} 
                                     dataFromItem={listItem} 
                                     onTextValueChange={onTextValueChange}
+                                    onStarClick={onStarClick}
+                                    onMultiClick={onMultiClick}
                                 />
                             </li>
                    )) 
